@@ -60,15 +60,27 @@
             <xs:documentation>Data which applies to this basket</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="account" type="tns:accountNumber" />
+            <xs:element name="account" type="tns:accountNumber">
+                <xs:annotation>
+                    <xs:documentation>A valid Exertis Micro-P account number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="orderId" type="tns:orderId">
                 <xs:annotation>
                     <xs:documentation>A reference to a an Order in the calling system, which
 is used as a Customer PO through MDFS and Oracle.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="userId" type="tns:userId" />
-            <xs:element name="userEmailAddress" type="tns:userEmailAddress" />
+            <xs:element name="userId" type="tns:userId">
+                <xs:annotation>
+                    <xs:documentation>A reference ID created by the calling system which refers to the User placing the order</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="userEmailAddress" type="tns:userEmailAddress">
+                <xs:annotation>
+                    <xs:documentation>The email address of the user placing the order. Any email notifications will be sent to this address</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="token" type="tns:TMSToken">
                 <xs:annotation>
                     <xs:documentation>A unique reference to a Bagging call from the calling System.
@@ -84,6 +96,11 @@ will be appended to notificationURL for all callbacks</xs:documentation>
                 <xs:annotation>
                     <xs:documentation>2 = Autobagging - all items are thrown into one bag, or as directed by bagTogether in BasketLine.
 3 = Invoke Bagging UI and allow user to define bags using a drag &amp;amp; drop interface</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="operationOptions" type="xs:integer" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Controls extra operations which may be needed. For example 1 = Create Order. If absent, we default to 0 which means do not create Order. Icom would use 0 as they send their order into EDI directly. Lebara would use 1 as MDFS needs to create the order.</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
