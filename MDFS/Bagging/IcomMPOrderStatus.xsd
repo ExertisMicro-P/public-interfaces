@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML Studio Designer Edition 8.1.7.2743 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:tns="http://www.micro-p.com/mdfs/fulfillment" elementFormDefault="qualified" targetNamespace="http://www.micro-p.com/mdfs/fulfillment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="accountNumber">
+        <xs:annotation>
+            <xs:documentation>a valid Micro-P account number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="M[X|C|S|T|E][0-9]{6}" />
+            <xs:length value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="orderStatuskHeaderType">
+        <xs:annotation>
+            <xs:documentation>Data which applies to this basket</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="account" type="tns:accountNumber">
+                <xs:annotation>
+                    <xs:documentation>A valid Exertis Micro-P account number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="OrderStatus">
+        <xs:annotation>
+            <xs:documentation>A container for both header and multiple lines</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="orderStatusHeader" type="tns:orderStatuskHeaderType" />
+                <xs:element name="ordersToCheck">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="orderId" type="tns:orderId" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="orderId">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+</xs:schema>

@@ -208,12 +208,17 @@ to be used when baggingType = 2 to define Handset and SIM pairing. You should no
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="labels" type="tns:labelType" minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="labels" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation>FUTURE FEATURE!
 Supports labels being affixed to bags. Maximum 2 labels per bag.
 NOT CURRENTLY SUPPORTED. DO NOT USE.</xs:documentation>
                     </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence maxOccurs="unbounded">
+                            <xs:element name="label" type="tns:labelType" />
+                        </xs:sequence>
+                    </xs:complexType>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>

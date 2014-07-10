@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML Studio Designer Edition 8.1.7.2743 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:tns="http://www.micro-p.com/mdfs/fulfillment" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="orderStatusResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="requestEcho" type="requestEchoType" />
+                <xs:element name="results">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="timestamp" type="xs:string" />
+                            <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded" />
+                            <xs:element name="error" type="errorType" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="requestEchoType">
+        <xs:sequence>
+            <xs:element name="account" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="statusType">
+        <xs:sequence>
+            <xs:element name="orderId" type="orderId" minOccurs="0" />
+            <xs:element name="status" type="xs:string" minOccurs="0" />
+            <xs:element name="error" type="errorType" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="errorType">
+        <xs:sequence>
+            <xs:element name="errorCode" type="xs:string" />
+            <xs:element name="errorDetail" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="orderId">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+</xs:schema>
