@@ -104,6 +104,7 @@ will be appended to notificationURL for all callbacks</xs:documentation>
 					Icom would use 0 as they send their order into EDI directly. Lebara would use 1 as MDFS needs to create the order.</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="deliveryDetails" type="tns:deliveryDetailsType" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="basketLineType">
@@ -233,4 +234,60 @@ NOT CURRENTLY SUPPORTED. DO NOT USE.</xs:documentation>
     <xs:simpleType name="bagIdType">
         <xs:restriction base="xs:integer" />
     </xs:simpleType>
+    <xs:complexType name="deliveryDetailsType">
+        <xs:sequence>
+            <xs:element name="firstname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="64" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="lastname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="64" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="housenumber">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="streetname">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="256" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="addressline2">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="256" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="city">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="64" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="postcode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="3" />
+                        <xs:maxLength value="9" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="emailaddress" type="xs:string" />
+            <xs:element name="phone" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>
