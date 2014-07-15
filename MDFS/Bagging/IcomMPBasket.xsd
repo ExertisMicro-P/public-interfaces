@@ -6,8 +6,8 @@
             <xs:documentation>a valid Micro-P account number</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="M[X|C|S|T|E][0-9]{6}" />
             <xs:length value="8" />
+            <xs:pattern value="[MG][XCSTEZ][0-9]{6}" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="orderId">
@@ -195,35 +195,6 @@ to be used when baggingType = 2 to define Handset and SIM pairing. You should no
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:element name="Basket">
-        <xs:annotation>
-            <xs:documentation>A container for both header and multiple lines</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="basketHeader" type="tns:basketHeaderType" />
-                <xs:element name="basketContent">
-                    <xs:complexType>
-                        <xs:sequence minOccurs="1" maxOccurs="unbounded">
-                            <xs:element name="BasketLine" type="tns:basketLineType" />
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="labels" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation>FUTURE FEATURE!
-Supports labels being affixed to bags. Maximum 2 labels per bag.
-NOT CURRENTLY SUPPORTED. DO NOT USE.</xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded">
-                            <xs:element name="label" type="tns:labelType" />
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
     <xs:complexType name="labelType">
         <xs:sequence>
             <xs:element name="type" type="xs:string" />
@@ -290,4 +261,33 @@ NOT CURRENTLY SUPPORTED. DO NOT USE.</xs:documentation>
             <xs:element name="phone" type="xs:string" />
         </xs:sequence>
     </xs:complexType>
+    <xs:element name="Basket">
+        <xs:annotation>
+            <xs:documentation>A container for both header and multiple lines</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="basketHeader" type="tns:basketHeaderType" />
+                <xs:element name="basketContent">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="BasketLine" type="tns:basketLineType" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="labels" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>FUTURE FEATURE!
+Supports labels being affixed to bags. Maximum 2 labels per bag.
+NOT CURRENTLY SUPPORTED. DO NOT USE.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence maxOccurs="unbounded">
+                            <xs:element name="label" type="tns:labelType" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>

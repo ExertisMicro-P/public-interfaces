@@ -6,8 +6,8 @@
             <xs:documentation>a valid Micro-P account number</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="M[X|C|S|T|E][0-9]{6}" />
             <xs:length value="8" />
+            <xs:pattern value="[MG][XCSTEZ][0-9]{6}" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="partCode">
@@ -16,6 +16,7 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
             <xs:pattern value="[-A-Z0-9#@]+" />
+            <xs:maxLength value="45" />
         </xs:restriction>
     </xs:simpleType>
     <xs:complexType name="stockCheckHeaderType">
@@ -23,10 +24,15 @@
             <xs:documentation>Data which applies to this basket</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="account" type="tns:accountNumber">
+            <xs:element name="account">
                 <xs:annotation>
                     <xs:documentation>A valid Exertis Micro-P account number</xs:documentation>
                 </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="tns:accountNumber">
+                        <xs:pattern value="[A-Z]{2}[0-9]{6}" />
+                    </xs:restriction>
+                </xs:simpleType>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
