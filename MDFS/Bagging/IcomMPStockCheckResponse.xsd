@@ -21,6 +21,7 @@
             <xs:element name="manupartcode" type="xs:string" minOccurs="0" />
             <xs:element name="title" type="xs:string" minOccurs="0" />
             <xs:element name="quantity" type="xs:unsignedByte" minOccurs="0" />
+            <xs:element name="price" type="xs:decimal" minOccurs="0" />
             <xs:element name="error" type="errorType" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>

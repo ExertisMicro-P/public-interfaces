@@ -24,15 +24,10 @@
             <xs:documentation>Data which applies to this basket</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="account">
+            <xs:element name="account" type="tns:accountNumber">
                 <xs:annotation>
                     <xs:documentation>A valid Exertis Micro-P account number</xs:documentation>
                 </xs:annotation>
-                <xs:simpleType>
-                    <xs:restriction base="tns:accountNumber">
-                        <xs:pattern value="[A-Z]{2}[0-9]{6}" />
-                    </xs:restriction>
-                </xs:simpleType>
             </xs:element>
         </xs:sequence>
     </xs:complexType>
