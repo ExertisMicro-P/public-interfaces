@@ -17,7 +17,13 @@
     </xs:complexType>
     <xs:complexType name="statusType">
         <xs:sequence>
-            <xs:element name="orderId" type="orderId" minOccurs="0" />
+            <xs:element name="orderId" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="orderId">
+                        <xs:pattern value="((LE)[\w]{6})|([\w]{8})" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
             <xs:element name="status" type="xs:string" minOccurs="0" />
             <xs:element name="error" type="errorType" minOccurs="0" />
         </xs:sequence>
@@ -42,7 +48,7 @@
                 <xs:element name="orderStatuses" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="unbounded" />
+                            <xs:element name="orderStatus" type="statusType" minOccurs="0" maxOccurs="unbounded" />
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
