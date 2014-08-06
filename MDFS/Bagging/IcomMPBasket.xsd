@@ -12,9 +12,13 @@
     </xs:simpleType>
     <xs:simpleType name="orderId">
         <xs:annotation>
-            <xs:documentation>The TMS Order ID or reference</xs:documentation>
+            <xs:documentation>The TMS Order ID or reference.
+Icom will use just 8 digits.
+Lebara will use LE followed by 6 digits</xs:documentation>
         </xs:annotation>
-        <xs:restriction base="xs:string" />
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((LE)[\w]{6})|([\w]{8})" />
+        </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="userId">
         <xs:annotation>
@@ -27,7 +31,7 @@
             <xs:documentation>a valid Micro-P Partcode. # &amp; @ codes accepted also</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="[-A-Z0-9#@]+" />
+            <xs:pattern value="[-A-Z0-9#@/]+" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="userEmailAddress">

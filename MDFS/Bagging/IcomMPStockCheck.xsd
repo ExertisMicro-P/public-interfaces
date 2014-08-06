@@ -15,8 +15,8 @@
             <xs:documentation>a valid Micro-P Partcode. # &amp; @ codes accepted also</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="[-A-Z0-9#@]+" />
             <xs:maxLength value="45" />
+            <xs:pattern value="[-A-Z0-9#@/]+" />
         </xs:restriction>
     </xs:simpleType>
     <xs:complexType name="stockCheckHeaderType">

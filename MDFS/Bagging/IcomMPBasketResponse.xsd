@@ -37,7 +37,9 @@ will be appended to notificationURL for all callbacks</xs:documentation>
         </xs:sequence>
     </xs:complexType>
     <xs:simpleType name="orderId">
-        <xs:restriction base="xs:string" />
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((LE)[\w]{6})|([\w]{8})" />
+        </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="TMSToken">
         <xs:annotation>
