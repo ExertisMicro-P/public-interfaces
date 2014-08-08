@@ -244,7 +244,7 @@ to be used when baggingType = 2 to define Handset and SIM pairing. You should no
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="addressline2">
+            <xs:element name="addressline2" minOccurs="0">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:maxLength value="256" />
@@ -266,8 +266,8 @@ to be used when baggingType = 2 to define Handset and SIM pairing. You should no
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="emailaddress" type="xs:string" />
-            <xs:element name="phone" type="xs:string" />
+            <xs:element name="emailaddress" type="xs:string" minOccurs="0" />
+            <xs:element name="phone" type="xs:string" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
     <xs:element name="Basket">
