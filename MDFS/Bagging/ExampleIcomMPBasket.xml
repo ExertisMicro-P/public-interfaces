@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML Studio Designer Edition 8.1.7.2743 (http://www.liquid-technologies.com) -->
+<tns:Basket xmlns:tns="http://www.micro-p.com/mdfs/fulfillment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.micro-p.com/mdfs/fulfillment C:\xampp\htdocs\public-interfaces\MDFS\Bagging\IcomMPBasket.xsd">
+    <tns:basketHeader>
+        <tns:account>MC012345</tns:account>
+        <tns:orderId>LE01234</tns:orderId>
+        <tns:userId>567</tns:userId>
+        <tns:userEmailAddress>test@test.com</tns:userEmailAddress>
+        <tns:token>6DB8F23B1BDC215F007DB073052F0715</tns:token>
+        <tns:notificationURL>http://www.tell-me-what.com/happened.php</tns:notificationURL>
+        <tns:baggingType>2</tns:baggingType>
+        <tns:deliveryDetails>
+            <tns:firstname>John</tns:firstname>
+            <tns:lastname>Smith</tns:lastname>
+            <tns:housenumber>3</tns:housenumber>
+            <tns:streetname>Long Street</tns:streetname>
+            <tns:addressline2>Smallplace</tns:addressline2>
+            <tns:city>Bigtown</tns:city>
+            <tns:postcode>AB12 3CD</tns:postcode>
+            <tns:emailaddress>contact@customer.com</tns:emailaddress>
+            <tns:phone>01234123456</tns:phone>
+        </tns:deliveryDetails>
+    </tns:basketHeader>
+    <tns:basketContent>
+        <tns:BasketLine>
+            <tns:partcode>SAMN7100W</tns:partcode>
+            <tns:quantity>1</tns:quantity>
+            <tns:imageURL>http://www.exertismicro-p.co.uk/ImagesPortal/UK/Catalogue/product/OR8400000288622.jpg</tns:imageURL>
+            <tns:shortDescription>string</tns:shortDescription>
+            <tns:productName>Samsung Galaxy Note II Smartphone 16GB (White)</tns:productName>
+            <tns:bagId>1</tns:bagId>
+        </tns:BasketLine>
+        <tns:BasketLine>
+            <tns:partcode>EE300007513</tns:partcode>
+            <tns:quantity>1</tns:quantity>
+            <tns:imageURL>http://www.exertismicro-p.co.uk/ImagesPortal/UK/Catalogue/product/OR8400000288622.jpg</tns:imageURL>
+            <tns:shortDescription></tns:shortDescription>
+            <tns:productName>EE Nano Standard LTE PAYM - Sim Pack</tns:productName>
+            <tns:bagId>1</tns:bagId>
+            <tns:pairingId>4</tns:pairingId>
+        </tns:BasketLine>
+        <tns:BasketLine>
+            <tns:partcode>LGEG2MINIBLK</tns:partcode>
+            <tns:quantity>1</tns:quantity>
+            <tns:imageURL>http://www.exertismicro-p.co.uk/ImagesPortal/UK/Catalogue/product/OR19700000415806.jpg</tns:imageURL>
+            <tns:shortDescription></tns:shortDescription>
+            <tns:productName>LG G2 Android Sim Free - Black</tns:productName>
+            <tns:bagId>2</tns:bagId>
+            <tns:pairingId>7</tns:pairingId>
+        </tns:BasketLine>
+        <tns:BasketLine>
+            <tns:partcode>EE300007513</tns:partcode>
+            <tns:quantity>1</tns:quantity>
+            <tns:imageURL>http://www.exertismicro-p.co.uk/ImagesPortal/UK/Catalogue/product/OR8400000288622.jpg</tns:imageURL>
+            <tns:shortDescription></tns:shortDescription>
+            <tns:productName>EE Nano Standard LTE PAYM - Sim Pack</tns:productName>
+            <tns:bagId>2</tns:bagId>
+            <tns:pairingId>7</tns:pairingId>
+        </tns:BasketLine>
+    </tns:basketContent>
+    <tns:labels>
+        <tns:label>
+            <tns:type>Address</tns:type>
+            <tns:labelText>Main Sales Floor</tns:labelText>
+            <tns:bagId>1</tns:bagId>
+        </tns:label>
+        <tns:label>
+            <tns:type>Label</tns:type>
+            <tns:labelText>For Bob Smith</tns:labelText>
+            <tns:bagId>2</tns:bagId>
+        </tns:label>
+    </tns:labels>
+</tns:Basket>
