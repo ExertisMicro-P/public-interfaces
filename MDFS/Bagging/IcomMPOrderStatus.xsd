@@ -6,7 +6,7 @@
             <xs:documentation>a valid Micro-P account number</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="M[X|C|S|T|E][0-9]{6}" />
+            <xs:pattern value="/^(E[CETXZ])|(G[CEV])|(M[CDELMNSTVXZ])[0-9]{6}$/i" />
             <xs:length value="8" />
         </xs:restriction>
     </xs:simpleType>
