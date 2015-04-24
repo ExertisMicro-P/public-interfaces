@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML Studio Designer Edition 8.1.7.2743 (http://www.liquid-technologies.com) -->
+<tns:orderStatusResponse xmlns:tns="http://www.micro-p.com/mdfs/fulfillment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://local.htdocs.com/fulfillment/interface%20definitions/IcomToMicro-PBasket/IcomMPOrderStatusResponse.xsd">
+    <tns:requestEcho>
+        <tns:account>MC077455</tns:account>
+    </tns:requestEcho>
+    <timestamp>20150422185009</timestamp>
+    <tns:orderStatuses>
+        <tns:orderStatus>
+            <tns:orderId>LE002326</tns:orderId>
+            <tns:status>DESPATCHCONFIRMED</tns:status>
+        </tns:orderStatus>
+    </tns:orderStatuses>
+</tns:orderStatusResponse>
