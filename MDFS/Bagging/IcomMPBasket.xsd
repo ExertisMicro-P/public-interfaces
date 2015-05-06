@@ -3,7 +3,7 @@
 <xs:schema xmlns:tns="http://www.micro-p.com/mdfs/fulfillment" elementFormDefault="qualified" targetNamespace="http://www.micro-p.com/mdfs/fulfillment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:simpleType name="accountNumber">
         <xs:annotation>
-            <xs:documentation>a valid Micro-P account number</xs:documentation>
+            <xs:documentation>a valid Exertis account number</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
             <xs:length value="8" />
@@ -14,10 +14,14 @@
         <xs:annotation>
             <xs:documentation>The TMS Order ID or reference.
 Icom will use just 8 digits.
-Lebara will use LE followed by 6 digits</xs:documentation>
+Lebara will use LE followed by 6 digits
+Lebara will use LE followed by 6 digits
+SalSac will use SS followed by 6 digits
+EE SalSac from EMM will use EE followed by 6 digits
+</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="((LE)[\w]{6})|([\w]{8})" />
+            <xs:pattern value="((EE)[\w]{6})|((SS)[\w]{6})|((LE)[\w]{6})|([\w]{8})" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="userId">
@@ -28,10 +32,10 @@ Lebara will use LE followed by 6 digits</xs:documentation>
     </xs:simpleType>
     <xs:simpleType name="partCode">
         <xs:annotation>
-            <xs:documentation>a valid Micro-P Partcode. # &amp; @ codes accepted also</xs:documentation>
+            <xs:documentation>a valid Exertis Partcode. # &amp; @ codes accepted also</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="[-A-Z0-9#@/]+" />
+            <xs:pattern value="[-A-Z0-9#@/_]+" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="userEmailAddress">
@@ -69,16 +73,11 @@ Lebara will use LE followed by 6 digits</xs:documentation>
                     <xs:documentation>A valid Exertis Micro-P account number</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="orderId">
+            <xs:element name="orderId" type="tns:orderId">
                 <xs:annotation>
                     <xs:documentation>A reference to a an Order in the calling system, which
 is used as a Customer PO through MDFS and Oracle.</xs:documentation>
                 </xs:annotation>
-                <xs:simpleType>
-                    <xs:restriction base="tns:orderId">
-                        <xs:minLength value="7" />
-                    </xs:restriction>
-                </xs:simpleType>
             </xs:element>
             <xs:element name="userId" type="tns:userId">
                 <xs:annotation>
@@ -114,6 +113,7 @@ will be appended to notificationURL for all callbacks</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="deliveryDetails" type="tns:deliveryDetailsType" minOccurs="0" />
+            <xs:element name="DirectDebitDetails" type="tns:DirectDebitDetailsType" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="basketLineType">
@@ -299,4 +299,25 @@ NOT CURRENTLY SUPPORTED. DO NOT USE.</xs:documentation>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    <xs:complexType name="DirectDebitDetailsType">
+        <xs:annotation>
+            <xs:documentation>Direct Debit sort code and account number should be encrypted using rijndael-128.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="DDSortCode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="6" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="DDAccountNumber">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="8" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>
