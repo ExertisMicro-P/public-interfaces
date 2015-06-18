@@ -26,6 +26,17 @@
             </xs:element>
             <xs:element name="status" type="xs:string" minOccurs="0" />
             <xs:element name="error" type="errorType" minOccurs="0" />
+            <xs:element name="pod" type="xs:anyURI" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Proof of Delivery URL</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="serialNumbers" type="serialNumbersType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="note" type="noteType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Notes attached to the order, timestamped.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="errorType">
@@ -55,4 +66,43 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    <xs:complexType name="serialNumbersType">
+        <xs:sequence>
+            <xs:element name="IMEI">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{15}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ICCID" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{19}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="MPN" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="07[0-9]{9}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="noteType">
+        <xs:sequence>
+            <xs:element name="note" type="xs:string" />
+            <xs:element name="timestamp" type="xs:dateTime" />
+            <xs:element name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="PUBLIC" />
+                        <xs:enumeration value="PRIVATE" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>
