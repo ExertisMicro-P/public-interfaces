@@ -270,6 +270,38 @@ to be used when baggingType = 2 to define Handset and SIM pairing. You should no
             <xs:element name="phone" type="xs:string" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="DirectDebitDetailsType">
+        <xs:annotation>
+            <xs:documentation>Direct Debit sort code and account number should be encrypted.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="DDSortCode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="6" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="DDAccountNumber">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="8" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="DDEncType">
+                <xs:annotation>
+                    <xs:documentation>Indicates the encoding/encryption method used to protect the DirectDebit elements</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="JEM" />
+                        <xs:enumeration value="EE" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
     <xs:element name="Basket">
         <xs:annotation>
             <xs:documentation>A container for both header and multiple lines</xs:documentation>
@@ -299,25 +331,4 @@ NOT CURRENTLY SUPPORTED. DO NOT USE.</xs:documentation>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="DirectDebitDetailsType">
-        <xs:annotation>
-            <xs:documentation>Direct Debit sort code and account number should be encrypted using rijndael-128.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="DDSortCode">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:minLength value="6" />
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:element>
-            <xs:element name="DDAccountNumber">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:minLength value="8" />
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
 </xs:schema>
