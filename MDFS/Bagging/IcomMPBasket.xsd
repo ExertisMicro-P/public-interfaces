@@ -21,7 +21,7 @@ EE SalSac from EMM will use EE followed by 6 digits
 </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="((EE)[\w]{6})|((SS)[\w]{6})|((LE)[\w]{6})|([\w]{8})" />
+            <xs:pattern value="((EE)[\w]{6})|((SS)[\w]{6})|((LE)[\w]{6})|([\w]{8}|([A-Z0-9 _.,!&quot;'/$]{0,27}EDR:[0-9]{6})" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="userId">
