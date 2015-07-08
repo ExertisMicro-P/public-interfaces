@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid XML Studio Designer Edition 8.1.7.2743 (http://www.liquid-technologies.com) -->
+<tns:orderStatusResponse xmlns:tns="http://www.micro-p.com/mdfs/fulfillment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.micro-p.com/mdfs/fulfillment C:\xampp1.8.2\htdocs\public-interfaces\MDFS\Bagging\IcomMPOrderStatusResponse.xsd">
+    <tns:requestEcho>
+        <tns:account>ABCDEFGH</tns:account>
+    </tns:requestEcho>
+    <tns:timestamp>string</tns:timestamp>
+    <tns:error>
+        <tns:errorCode>string</tns:errorCode>
+        <tns:errorDetail>string</tns:errorDetail>
+    </tns:error>
+    <tns:orderStatuses>
+        <tns:orderStatus>
+            <tns:status>string</tns:status>
+            <tns:serialNumbers>
+                <tns:IMEI>string</tns:IMEI>
+            </tns:serialNumbers>
+            <tns:serialNumbers>
+                <tns:IMEI>string</tns:IMEI>
+            </tns:serialNumbers>
+            <tns:serialNumbers>
+                <tns:IMEI>string</tns:IMEI>
+            </tns:serialNumbers>
+            <tns:note>
+                <tns:note>string</tns:note>
+                <tns:timestamp>2001-11-20T00:39:00.20</tns:timestamp>
+                <tns:type>PRIVATE</tns:type>
+            </tns:note>
+            <tns:note>
+                <tns:note>string</tns:note>
+                <tns:timestamp>1985-09-23T21:37:09.64</tns:timestamp>
+                <tns:type>PRIVATE</tns:type>
+            </tns:note>
+        </tns:orderStatus>
+    </tns:orderStatuses>
+</tns:orderStatusResponse>
