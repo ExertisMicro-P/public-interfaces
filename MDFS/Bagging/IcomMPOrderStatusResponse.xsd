@@ -7,7 +7,7 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
             <xs:length value="8" />
-            <xs:pattern value="(E[CETXZ])|(G[CEV])|(M[CDELMNSTVXZ])[0-9]{6}" />
+            <xs:pattern value="[MGEmge][XCSTEZLMNDxcstezlmnd][0-9]{6}" />
         </xs:restriction>
     </xs:simpleType>
     <xs:complexType name="requestEchoType">
@@ -20,7 +20,7 @@
             <xs:element name="orderId" minOccurs="0">
                 <xs:simpleType>
                     <xs:restriction base="orderId">
-                        <xs:pattern value="((EE)[\w]{6})|((SS)[\w]{6})|((LE)[\w]{6})|([\w]{8})|([-A-Z0-9 _]{0,27}EDR:[0-9]{6})" />
+                        <xs:pattern value="((LE)[\w]{6})|([\w]{8}) |((EE)[\w]{6})|([\w]{8}) | ((EDR)[\w]{6})|([\w]{8})" />
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
@@ -47,7 +47,7 @@
     </xs:complexType>
     <xs:simpleType name="orderId">
         <xs:restriction base="xs:string">
-            <xs:pattern value="((LE)[\w]{6})|([\w]{8})" />
+            <xs:pattern value="((LE)[\w]{6})|([\w]{8}) |((EE)[\w]{6})|([\w]{8}) | ((EDR)[\w]{6})|([\w]{8})" />
         </xs:restriction>
     </xs:simpleType>
     <xs:element name="orderStatusResponse">

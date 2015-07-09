@@ -7,7 +7,7 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
             <xs:length value="8" />
-            <xs:pattern value="(E[CETXZ])|(G[CEV])|(M[CDELMNSTVXZ])[0-9]{6}" />
+            <xs:pattern value="[MGEmge][XCSTEZLMNDxcstezlmnd][0-9]{6}" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="orderId">
@@ -21,7 +21,7 @@ EE SalSac from EMM will use EE followed by 6 digits
 </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="((EE)[\w]{6})|((SS)[\w]{6})|((LE)[\w]{6})|([\w]{8})|([-A-Z0-9 _]{0,27}EDR:[0-9]{6})" />
+            <xs:pattern value="((LE)[\w]{6})|([\w]{8}) |((EE)[\w]{6})|([\w]{8}) | ((EDR)[\w]{6})|([\w]{8})" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="userId">
