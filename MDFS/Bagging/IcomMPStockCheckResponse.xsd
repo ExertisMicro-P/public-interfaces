@@ -7,7 +7,7 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
             <xs:length value="8" />
-            <xs:pattern value="/^(E[CETXZ])|(G[CEV])|(M[CDELMNSTVXZ])[0-9]{6}$/i" />
+            <xs:pattern value="(E[CETXZ])|(G[CEV])|(M[CDELMNSTVXZ])[0-9]{6}" />
         </xs:restriction>
     </xs:simpleType>
     <xs:complexType name="requestEchoType">
