@@ -2,7 +2,7 @@
 <tns:Basket xmlns:tns="http://www.micro-p.com/mdfs/fulfillment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.micro-p.com/mdfs/fulfillment C:\xampp\htdocs\public-interfaces\MDFS\Bagging\IcomMPBasket.xsd">
     <tns:basketHeader>
         <tns:account>MX919191</tns:account>
-        <tns:orderId>EE90001234</tns:orderId>
+        <tns:orderId>EE901234</tns:orderId>
         <tns:userId>567</tns:userId>
         <tns:userEmailAddress>test@test.com</tns:userEmailAddress>
         <tns:token>6DB8F23B1BDC215F007DB073052F0715</tns:token>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<basketResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ShopMPBasketResponse.xsd">
+    <timestamp>20150813095328</timestamp>
+    <status>FAIL</status>
+    <token>unknown</token>
+    <orderId>unknown</orderId>
+    <errors>
+        <error>
+            <errorCode>XMLINVALID</errorCode>
+            <errorDetail>'rawxml' param missing from POST</errorDetail>
+        </error>
+    </errors>
+</basketResponse>
