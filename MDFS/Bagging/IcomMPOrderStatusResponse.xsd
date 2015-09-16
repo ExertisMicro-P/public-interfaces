@@ -85,7 +85,7 @@
             <xs:element name="MPN" minOccurs="0">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
-                        <xs:pattern value="07[0-9]{9}" />
+                        <xs:pattern value="(MPN Unknown)|(07[0-9]{9})" />
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>

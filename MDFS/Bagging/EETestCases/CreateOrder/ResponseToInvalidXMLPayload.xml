@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<basketResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ShopMPBasketResponse.xsd">
+    <timestamp>20150813102405</timestamp>
+    <status>FAIL</status>
+    <token>unknown</token>
+    <orderId>unknown</orderId>
+    <errors>
+        <error>
+            <errorCode>XMLINVALID</errorCode>
+            <errorDetail>Unable to process the XML file Array
+                (
+                [0] => LibXMLError Object
+                (
+                [level] => 2
+                [code] => 1871
+                [column] => 0
+                [message] => Element '{http://www.micro-p.com/mdfs/fulfillment}userId': This element is not expected. Expected is ( {http://www.micro-p.com/mdfs/fulfillment}orderId ).
+
+                [file] => /var/www/html/mdfsbg.exertis.io/
+                [line] => 6
+                )
+
+                )
+            </errorDetail>
+        </error>
+    </errors>
+</basketResponse>
+
